@@ -130,6 +130,7 @@ $("reserve").onclick=()=>{let list=selected.map(i=>found[i][0]+" — "+t(found[i
 $("close").onclick=()=>$("dialog").close();
 $("bookingForm").onsubmit=e=>{e.preventDefault();$("message").textContent=t("ok")};
 $("menu").onclick=()=>$("nav").classList.toggle("open");
+$("nav").querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>$("nav").classList.remove("open")));
 $("language").onchange=e=>applyLang(e.target.value);
 $("year").textContent=new Date().getFullYear();dates();
 let nl=(navigator.language||"fr").slice(0,2);applyLang(T[nl]?nl:"fr");
