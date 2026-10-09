@@ -141,7 +141,9 @@ const rooms=[
 ["Room Beach Baleal","Standard",130,"",2],
 ["Room Beach Baleal","Balcony",145,"",3],
 ["Room Beach Baleal","Balcony",155,"",3]
-];
+]
+  if("scrollRestoration" in history)history.scrollRestoration="manual";
+window.addEventListener("load",()=>window.scrollTo(0,0));;
 let found=[],selected=[];
 const $=id=>document.getElementById(id);
 function dates(){let d=new Date(),n=new Date(d);n.setDate(d.getDate()+1);let f=x=>x.toISOString().slice(0,10);$("checkin").value=f(d);$("checkout").value=f(n);$("checkin").min=f(d);$("checkout").min=f(n)}
